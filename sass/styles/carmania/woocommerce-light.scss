@@ -1,0 +1,10 @@
+// Set LTR (Left to Right) direction
+$dir: ltr;
+$stack: 'carmania';
+$is_amp: false;
+@import "../../lib.directional";
+
+@import "../../settings";
+@import "settings";
+
+@import "../../base_woocommerce";

@@ -1,0 +1,74 @@
+.entry-featured-media {
+    img {
+        width: 100%;
+    }
+}
+
+// app.
+@if ( 'app' == $stack ) {
+    .entry-featured-media {
+        position: relative;
+        z-index: 10;
+
+        a.g1-frame {
+            position: relative;
+
+            // Shadow on a separate layer for better performance
+            &:before {
+                display: block;
+
+                position: absolute;
+                // 1px not 0px to fix glitches
+                #{$left}: 1px;
+                #{$right}: 1px;
+                top: 1px;
+                bottom: 1px;
+
+                @include border-radius(6px);
+
+                @include box-shadow( 0 20px 40px 0 rgba(0, 0, 0, 0.333));
+
+                opacity: 0;
+
+                @include transition( opacity 0.375s ease-in-out );
+
+                content: "";
+            }
+        }
+
+        a.g1-frame:hover:before {
+            opacity: 0.999;
+        }
+
+        img,
+        .g1-nsfw {
+            @include border-radius(6px);
+        }
+    }
+}
+
+
+.entry-media-with-ellipsis {
+    position: relative;
+    max-height: 500px;
+    overflow: hidden;
+}
+.entry-media-ellipsis {
+    padding: 10px 20px 10px;
+
+    position: absolute;
+    #{$left}: 0;
+    #{$right}: 0;
+    top: auto;
+    bottom: 0;
+
+    text-align: center;
+
+    background-color: #454545;
+
+    .g1-button {
+        border-color: #fff;
+        background-color: #fff;
+        color: #000;
+    }
+}

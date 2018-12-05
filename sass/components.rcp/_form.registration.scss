@@ -1,0 +1,119 @@
+#rcp_registration_form.rcp_form{
+	padding: side-values(0);
+	.rcp_login_link{
+		display: block;
+	}
+	.rcp_user_fieldset{
+		margin: 0 -10px;
+
+		// Clearfix
+		&:after {
+			clear: both;
+			display: table;
+			content: "";
+		}
+
+		> p {
+			@include box-sizing(border-box);
+			float: $left;
+			width: 50%;
+			padding: 0 10px;
+			margin-bottom: 20px;
+		}
+
+		input{
+			width: 100%;
+		}
+	}
+
+	.rcp_registration_total_details{
+		width: 100%;
+	}
+}
+
+#rcp_subscription_levels{
+	@include display(flex);
+	@include flex-wrap(wrap);
+	@include align-items(stretch);
+
+	margin: 0 -10px 1rem;
+}
+
+li.rcp_subscription_level {
+	@include box-sizing(border-box);
+	@include display(flex);
+	@include flex(1 0 auto);
+	width: 220px;
+	padding: 0 10px;
+	margin: 0 0 20px;
+
+	> .g1-pricingtable {
+		@include box-sizing(border-box)
+		width: 100%;
+		border-width: 1px;
+
+		text-align: center;
+
+		border-style: solid;
+		@include border-radius($ui_border_radius);
+
+		border-color: $skin_border_color;
+
+		label {
+			display: block;
+		}
+	}
+
+	.g1-pricingtable-header {
+		padding: 20px 20px 0;
+		border-width: 0 0 1px;
+
+		border-style: solid;
+		@include border-radius($ui_border_radius $ui_border_radius 0 0);
+
+		border-color: transparent;
+		background-color: $skin_background_tone_color;
+	}
+
+	.g1-pricingtable-body {
+		border-width: 1px 0 0;
+		border-style: solid;
+
+		border-color: $skin_border_color;
+	}
+
+	input.rcp_level {
+		display: block;
+		float: none;
+		margin: 0 auto 20px;
+	}
+
+	.rcp_subscription_level_name {
+		display: block;
+		margin-bottom: 20px;
+	}
+
+	.rcp_price {
+		display: block;
+		margin-bottom: 10px;
+
+		text-transform: capitalize;
+
+		.rcp_separator {
+			display: none;
+		}
+	}
+
+	.rcp_level_duration {
+		display: block;
+		margin-bottom: 20px;
+
+		text-transform: capitalize;
+	}
+
+	.rcp_level_description {
+		border: none;
+		padding: 20px;
+		font-size: inherit;
+	}
+}

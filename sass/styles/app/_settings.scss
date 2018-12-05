@@ -1,0 +1,102 @@
+$ui_border_radius: 4px;
+$box_border_radius: 0;
+$avatar_border_radius: 50%;
+
+
+$important_font_family: "Work Sans", "Roboto", sans-serif;
+
+$important_2nd_font_family: "Work Sans", "Roboto", sans-serif;
+$typo_2nd_font_weight:      400;
+$typo_2nd_letter_spacing:   0.3em;
+$typo_2nd_text_transform:   uppercase;
+
+
+// Menu
+$menu_font_size: 16px;
+$menu_font_family: "Work Sans", "Roboto", sans-serif;
+$drop_toggle_font_family: "Work Sans", "Roboto", sans-serif;
+$menu_font_weight: 700;
+$menu_text_transform: none;
+
+// Submenu
+$submenu_font_size: 13px;
+$submenu_font_family: "Work Sans", "Roboto", sans-serif;
+$submenu_font_weight: 400;
+$submenu_text_transform: none;
+$submenu_letter_spacing: normal;
+
+
+
+
+$giga_font_size:            48px;
+$giga_line_height:          52/48;
+$giga_font_weight:          800;
+$giga_letter_spacing:       0;
+
+$mega_font_size:            40px;
+$mega_line_height:          42/40;
+$mega_font_weight:          700;
+$mega_letter_spacing:       -0.025em;
+
+$alpha_letter_spacing:      0;
+$alpha_font_weight:         700;
+
+$beta_letter_spacing:       0;
+$beta_font_weight:          700;
+
+$gamma_font_size:           19px;
+$gamma_line_height:         23/19;
+$gamma_font_weight:         700;
+$gamma_letter_spacing:      0;
+
+$delta_font_size:           16px;
+$delta_line_height:         20/16;
+$delta_font_weight:         600;
+$delta_letter_spacing:      0;
+
+$epsilon_letter_spacing:    0;
+$epsilon_font_weight:       600;
+
+$zeta_font_size: 11px;
+$zeta_line_height: 14/11;
+$zeta_letter_spacing: 0;
+
+
+$meta_font_size:                12px;
+$meta_font_family:              "Work Sans", "Roboto", sans-serif;
+
+// Categories.
+$categories_font_size:          12px;
+$categories_font_family:        "Work Sans", "Roboto", sans-serif;
+$categories_font_weight:        800;
+$categories_text_transform:     uppercase;
+$categories_border-color:       $skin_background_color;
+$categories_background_color:   $skin_background_color;
+$categories_text_color:         $skin_important_text_color;
+$categories_padding:            3px 8px 3px 0;
+$categories_border_width:       0;
+
+
+$button_font_family: "Work Sans", "Roboto", sans-serif;
+$button_xs_font_size:   11px;
+$button_s_font_size:    13px;
+$button_m_font_size:    15px;
+$button_l_font_size:    17px;
+$button_xl_font_size:   19px;
+$button_text_transform: none;
+$button_border_radius:  99px;
+
+$badge_font_size:       16px;
+$badge_border_radius:   0;
+$badge_spacing:         0;
+
+$entry_counter_font_weight: 400;
+
+$tabs_font_family: "Work Sans", "Roboto", sans-serif;
+
+
+$ui_font_family: "Work Sans", "Roboto", sans-serif;
+
+$regular_font_family: "Work Sans", "Roboto", sans-serif;
+
+$header_elements_spacing_base: 20px;

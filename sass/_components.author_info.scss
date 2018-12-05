@@ -1,0 +1,172 @@
+$_centered: 'app' == $stack;
+
+// Variables
+$_avatar_size:          68px;
+$_avatar_border_width:  4px;
+$_avatar_overlap_size:  8px;
+
+
+.author-info {
+    @include box-sizing( border-box );
+    max-width: $grid_2of3_width;
+    padding: 40px 0 0;
+    margin: 0 auto 30px;
+
+    position: relative;
+
+    text-align: center;
+
+
+    @if ( $box_border_radius ) {
+        border-radius: $box_border_radius;
+    }
+
+    @if ( 'app' == $stack ) {
+        border-radius: 6px;
+    }
+
+    @if ( index( ( 'original-2018', 'original', 'minimal', 'hardcore', 'music', 'carmania', 'fashion', 'app' ), $stack ) ) {
+        background: $skin_background_tone_color;
+    }
+
+    @if ( 'bunchy' == $stack ) {
+        background: $skin_background_tone_color;
+    }
+
+
+    @if 'cards' == $stack {
+        background-color: #ededed;
+    }
+
+    @if ( 'miami' == $stack ) {
+        background-color: $skin_background_tone_color;
+    }
+
+    .author-info-inner {
+        position: relative;
+    }
+
+    .author-overview {
+        &:after {
+            display: block;
+            height: 0;
+            margin-top: 30px;
+
+            content: "";
+        }
+    }
+
+    .author-avatar {
+        width: 60px;
+        height: 60px;
+        margin: 0 auto;
+
+        position: absolute;
+        z-index: 3;
+        #{$left}: 0;
+        #{$right}: 0;
+        top: -70px;
+
+        a {
+            display: block;
+            position: relative;
+        }
+
+        img {
+            display: block;
+        }
+
+        .avatar {
+            @if ( 'app' == $stack ) {
+                @include box-shadow( 0 10px 20px rgba(0,0,0, 0.2) );
+            }
+        }
+
+        .author-info-rank{
+            max-height: 30px;
+
+            position: absolute;
+            #{$right}: 0;;
+            #{$left}: auto;
+            bottom: 0;
+
+            @include translateX(50%);
+        }
+    }
+
+
+
+    .author-title {
+        .g1-gamma {
+            margin-bottom: 0.75rem;
+        }
+    }
+
+    .g1-socials-items{
+        margin-bottom: .5rem;
+
+        .g1-socials-item-icon{
+            font-size: 21px;
+        }
+    }
+
+    #mycred-users-badges {
+        margin-bottom: 0.5rem;
+    }
+
+}
+
+.g1-row .author-info {
+    margin-#{$left}: auto;
+    margin-#{$right}: auto;
+}
+
+@media only screen and ( min-width: $mobile_breakpoint + 1px ) {
+    .author-info {
+        @if ( $_centered ) {
+            padding: 60px 30px 0;
+        } @else {
+            padding: 30px 30px 0;
+        }
+
+        @if ( false == $_centered ) {
+            text-align: $left;
+        }
+
+        .author-overview {
+            min-height: 100px;
+
+            @if ( false == $_centered ) {
+                padding-#{$left}: 120px;
+            }
+        }
+
+        .author-avatar {
+            width: 80px;
+            height: 80px;
+
+            @if ( $_centered ) {
+                #{$left}: 0;
+                #{$right}: 0;
+                top: -100px;
+            } @else {
+                #{$left}: 0;
+                #{$right}: auto;
+                top: 0;
+            }
+
+            .author-info-rank {
+                max-height: 40px;
+            }
+        }
+
+        @if ( false == $_centered ) {
+            .author-extras {
+                @include display(flex);
+                @include flex-wrap(wrap);
+                @include align-items(center);
+                @include justify-content(space-between);
+            }
+        }
+    }
+}

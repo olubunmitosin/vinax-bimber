@@ -1,0 +1,170 @@
+/**
+ * Small List Template
+ */
+.entry-tpl-list-s {
+    width: 100%;
+
+    position: relative;
+
+    @if ( 'cards' == $stack ) {
+        margin-bottom: 10px;
+
+        background: $skin_background_color;
+        box-shadow: 0 1px 1px #ededed;
+    } @else {
+        margin-bottom: 30px;
+    }
+
+    &:after {
+        clear: both;
+        display: table;
+        content: "";
+    }
+
+    .entry-featured-media {
+        float: #{$left};
+        max-width: 120px;
+        width: 50%;
+        margin: if-stack('cards', 0, side-values( 0 10px 0 0 ) );
+    }
+
+
+    .entry-flags {
+        margin: 0 0 10px;
+
+        position: absolute;
+        z-index: 12;
+
+        @if ( 'bunchy' == $stack ) {
+            clear: $left;
+            float: $left;
+            max-width: 364px;
+            width: 50%;
+            padding: 0 10px;
+
+            top: 10px;
+            #{$left}: auto;
+            #{$right}: 0;
+        } @else if ( 'fashion' == $stack ) {
+            padding: 0 10px;
+            top: 10px;
+            #{$left}: 0;
+            #{$right}: auto;
+        } @else if ( 'carmania' == $stack or 'fashion' == $stack or 'app' == $stack ) {
+            top: 0;
+            #{$left}: 0;
+            #{$right}: auto;
+        } @else if ( 'miami' == $stack or 'hardcore' == $stack or 'music' == $stack ) {
+            top: 0;
+            #{$left}: 0;
+            #{$right}: auto;
+        } @else{
+            padding: 0 10px;
+
+            top: -10px;
+            #{$left}: 0;
+            #{$right}: auto;
+        }
+    }
+
+    .entry-flags:first-child {
+        position: relative;
+    }
+
+    .entry-body {
+        @if ('cards' == $stack) {
+            padding: 0 10px 1px;
+
+            background-color: $skin_background_color;
+        }
+
+        overflow: hidden;
+    }
+
+    .entry-stats,
+    .entry-categories {
+        margin-bottom: 0.25rem;
+    }
+
+    .entry-shares span,
+    .entry-views span,
+    .entry-downloads span,
+    .entry-votes span {
+        display: none;
+    }
+
+    .entry-title {
+        margin-bottom: 0.75em;
+    }
+
+    .g1-button {
+        float: $right;
+        margin-bottom: 15px;
+    }
+}
+
+
+@media only screen and ( max-width: $mobile_breakpoint ) {
+    .entry-tpl-list-s {
+        .entry-flag {
+            width: 30px;
+            height: 30px;
+
+            line-height: 30px;
+
+            &:before {
+                font-size: 16px;
+            }
+        }
+
+        .g1-frame-icon {
+            width: #{$frame_icon_small_size};
+            height: #{$frame_icon_small_size};
+            margin-top: -$frame_icon_small_size/2;
+            margin-#{$left}: -$frame_icon_small_size/2;
+
+            font-size: $frame_icon_small_font_size;
+            line-height: #{$frame_icon_small_size};
+
+            &:before {
+                font-size: #{$frame_icon_small_size};
+                text-shadow: 0 0 20px rgba(0,0,0, 0.333);
+            }
+        }
+    }
+}
+
+
+@media only screen and ( min-width: $mobile_breakpoint + 1px ) {
+    .entry-tpl-list-s {
+        @if ( 'cards' == $stack ) {
+            margin-bottom: 20px;
+        }
+
+        .entry-featured-media {
+            max-width: 265px;
+        }
+
+        .entry-stats,
+        .entry-categories {
+            margin-bottom: 0.5rem;
+        }
+    }
+}
+
+// Adjust spacing on large screens.
+@media only screen and ( min-width: 1025px ) {
+    .entry-tpl-list-s {
+        @if ( 'cards' == $stack ) {
+            margin-bottom: 30px;
+
+            .entry-body {
+                padding: 15px 30px 10px;
+            }
+        } @else {
+            .entry-featured-media {
+                margin-#{$right}: 30px;
+            }
+        }
+    }
+}

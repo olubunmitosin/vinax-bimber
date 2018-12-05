@@ -1,0 +1,9 @@
+.entry-author {
+    display: block;
+    margin-#{$right}: 10px;
+
+    .avatar {
+        float: #{$left};
+        margin-#{$right}: 10px;
+    }
+}

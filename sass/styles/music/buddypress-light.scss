@@ -1,0 +1,11 @@
+$skin: 'light';
+
+$is_amp: false;
+@import "../../settings";
+@import "settings";
+
+$stack: 'music';
+
+@import "../../compass/css3";
+
+@import "../../buddypress";

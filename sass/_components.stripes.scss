@@ -1,0 +1,301 @@
+
+
+/*
+ * stripes - Base Styles. Loads all specific stripes.
+ */
+
+.g1-stripe {
+    margin-bottom: 40px;
+
+    [type=text],
+    [type=email] {
+        border-color: transparent;
+    }
+}
+
+.g1-stripe-full {
+    margin-bottom: 0;
+}
+
+
+
+.g1-stripe-csstodo {
+    position: relative;
+    width: 100%;
+    margin: side-values(0 auto);
+}
+
+.g1-stripe-inner {
+    @include box-sizing(border-box);
+    display: block;
+    padding: side-values(90px 20px 20px 20px);
+
+    position: relative;
+    z-index: 1;
+}
+
+.g1-stripe-background {
+    overflow: hidden;
+    margin: side-values(0 auto);
+
+    position: absolute;
+    z-index: -2;
+    #{$left}: 0;
+    #{$right}: 0;
+    top: 0;
+    bottom: 0;
+
+
+    @include transition(.375s);
+}
+
+
+
+
+.g1-stripe-icon{
+    position: absolute;
+    width: 68px;
+    height: 51px;
+    margin-#{$left}: -39px;
+
+    top: 0%;
+    #{$left}: 50%;
+    #{$right}: auto;
+
+    background-color: $skin_background_color;
+
+    &:before{
+        display: block;
+        margin: -0.5em 0 0 -0.5em;
+
+        position: absolute;
+        top: 50%;
+        #{$left}: 50%;
+        #{$right}: auto;
+
+        font-size: 40px;
+        line-height: 1;
+        font-family: "starmile";
+
+        color: $skin_important_text_color;
+    }
+
+
+    &:after{
+        display: block;
+        width: 0;
+        height: 0;
+        border-width: 10px 34px 0px 34px;
+
+        position: absolute;
+        bottom: -10px;
+
+        border-style: solid;
+        border-color: $skin_background_color transparent transparent transparent;
+
+        content: '';
+    }
+}
+
+.g1-stripe-thumbnail {
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin: 0 0 0 -50px;
+
+    position: absolute;
+    #{$left}: 50%;
+    #{$right}: auto;
+    top: -20px;
+
+    @include rotate(-5deg);
+    @include box-shadow(4px 4px 8px rgba(0, 0, 0, 0.1));
+    background-color: $skin_background_color;
+}
+
+.g1-stripe-content {
+    @include flex(1 1 auto);
+    padding-#{$left}: 20px;
+    padding-#{$right}: 20px;
+    margin-bottom: 20px;
+}
+
+.g1-stripe-label,
+.g1-stripe-title {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.g1-stripe-label {
+    margin-bottom: 2px;
+}
+
+.g1-stripe-actions {
+    padding-#{$left}: 20px;
+    padding-#{$right}: 20px;
+    margin-bottom: 20px;
+
+    text-align: center;
+}
+
+
+@media only screen and ( min-width: 768px ) {
+    .g1-stripe-inner {
+        padding: side-values(20px 20px 0 90px);
+    }
+
+    .g1-stripe-icon {
+        width: 80px;
+        height: 60px;
+        margin: 0;
+
+        top: 10px;
+        #{$left}: 0;
+        #{$right}: auto;
+
+        &:after{
+            bottom: 0;
+            #{$right}: -10px;
+            #{$right}: -10px;
+
+            @include if-ltr() {
+                border-width: 30px 0 30px 10px;
+                border-color: transparent transparent transparent $skin_background_color;
+            }
+            @include if-rtl() {
+                border-width: 30px 10px 30px 0;
+                border-color: transparent $skin_background_color transparent transparent;
+            }
+        }
+    }
+
+    .g1-stripe-thumbnail {
+        margin: 0;
+
+        #{$left}: 20px;
+        #{$right}: auto;
+        top: -5px;
+    }
+
+    .g1-stripe-body {
+        @include display(flex);
+        @include flex-wrap(nowrap);
+        @include align-items(flex-end);
+    }
+
+    .g1-stripe-label,
+    .g1-stripe-title,
+    .g1-stripe-actions {
+        text-align: $left;
+    }
+}
+
+
+
+
+
+// Podcast
+.g1-stripe-podcast {
+    .g1-stripe-icon:before {
+        content: "\e007";
+    }
+}
+
+// Newsletter
+.g1-stripe-newsletter {
+    .g1-stripe-icon:before {
+        content: "\e001";
+    }
+
+    .g1-stripe-content {
+        @include flex(0 1 auto);
+    }
+
+    .g1-stripe-actions {
+        @include flex(1 1 auto);
+    }
+
+    .g1-newsletter {
+        margin-bottom: 0;
+    }
+}
+
+@media only screen and ( min-width: 768px ) {
+    .g1-stripe-newsletter {
+        .g1-newsletter {
+            .mc4wp-form {
+                margin-#{$right}: 0;
+            }
+        }
+    }
+}
+
+
+
+
+// Patreon
+.g1-stripe-patreon {
+    .g1-stripe-icon {
+        width: 120px;
+        height: 51px;
+        margin-#{$left}: -60px;
+
+        background-image: url('../../../../images/patreon.png');
+        background-position: 50% 50%;
+        background-size: 80%;
+        background-repeat: no-repeat;
+
+        &:after{
+            border-width: 10px 60px 0px 60px;
+        }
+    }
+}
+
+@media only screen and ( min-width: 768px ) {
+    .g1-stripe-patreon {
+        .g1-stripe-inner {
+            padding-#{$left}: 150px;
+        }
+
+        .g1-stripe-icon{
+            width: 140px;
+            height: 60px;
+            margin: 0;
+
+            &:after{
+                border-width: 30px 0 30px 10px;
+            }
+        }
+    }
+}
+
+
+
+
+// Promo Single Product
+.g1-stripe-promoted-product {
+    .g1-stripe-inner {
+        padding-top: 110px;
+    }
+
+    .add_to_cart_inline {
+        border: none;
+        margin-bottom: 0;
+
+        .amount {
+            display: none;
+            margin-#{$right}: 10px;
+        }
+    }
+}
+
+@media only screen and ( min-width: 768px ) {
+    .g1-stripe-promoted-product {
+        .g1-stripe-inner {
+            padding-top: 20px;
+            padding-#{$left}: 120px;
+        }
+    }
+}
+
+

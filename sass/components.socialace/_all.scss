@@ -1,0 +1,55 @@
+.g1-tweet-intents {
+    .g1-tweet-action {
+        color: $skin_important_text_color;
+        opacity: 0.999;
+
+        &:hover {
+            opacity: 0.5;
+        }
+    }
+}
+
+
+
+.g1-instagram-feed {
+    .g1-instagram-user {
+        margin-bottom: 0.75rem;
+    }
+
+    .g1-instagram-avatar {
+        display: block;
+        margin-bottom: 6px;
+
+        &:before {
+            display: block;
+
+            font: 42px/1 FontAwesome;
+
+            content: "\f16d";
+        }
+    }
+}
+
+
+
+
+.g1-instagram-section {
+    .g1-instagram-feed-overlay {
+        &:before {
+            display: block;
+            margin-bottom: .75rem;
+
+            font: 42px/1 FontAwesome;
+
+            content: "\f16d";
+        }
+    }
+}
+
+
+.widget_g1_socials_instagram {
+    .g1-instagram-items,
+    .g1-instagram-profile {
+        margin-bottom: 0.75rem;
+    }
+}

@@ -1,0 +1,84 @@
+.adace-adi-buttons{
+    max-width:200px;
+    margin:0 auto;
+    .adace-adi-disable-button{
+        display:block;
+        margin-bottom: -10px;
+    }
+    .adace-adi-refresh-button {
+        margin-bottom: 20px;
+        display:block;
+    }
+}
+
+
+.adace-adi-popup-wrapper {
+    visibility: hidden;
+    display:flex;
+    @include opacity(0);
+
+	@include transition(
+		visibility 0s 0.375s,
+		opacity 0.375s ease-in-out,
+		transform 0.375s ease-in-out
+	);
+}
+
+.adace-adi-popup{
+    visibility: hidden;
+    @include opacity(0);
+	@include transform( scale(0.85) );
+
+	@include transition(
+		visibility 0s 0.375s,
+		opacity 0.375s ease-in-out,
+		transform 0.375s ease-in-out
+	);
+}
+
+.adace-adi-popup-visible{
+    .adace-adi-popup-wrapper {
+        visibility: visible;
+        @include opacity(1);
+
+        @include transition(
+            visibility 0s,
+            opacity 0.375s ease-in-out,
+            transform 0.375s ease-in-out
+        );
+    }
+    .adace-adi-popup{
+        visibility: visible;
+        @include opacity(1);
+
+        @include transition(
+            visibility 0s,
+            opacity 0.375s ease-in-out,
+            transform 0.375s ease-in-out
+        );
+        @include transform( scale(1) );
+    }
+}
+
+.adace-adi-close:before{
+    border-color: $skin_background_tone_color;
+	background-color: $skin_background_tone_color;
+	color: $skin_important_text_color;
+    @include transition(
+		border-color 0.375s ease-in-out,
+		background-color 0.375s ease-in-out,
+		color 0.375s ease-in-out
+    );
+}
+.adace-adi-close:hover:before {
+    border-color: $skin_reverse_background_color;
+    background-color: $skin_reverse_background_color;
+    color: $skin_reverse_important_text_color;
+}
+
+
+@if ( 'app' == $stack ) {
+    .adace-adi-popup {
+        border-radius: 6px;
+    }
+}

@@ -1,0 +1,21 @@
+.g1-collection-listxxs-mod21 {
+    .g1-module-big {
+        .g1-collection-items {
+            margin-bottom: 0;
+        }
+    }
+
+    .entry-tpl-list {
+        margin-bottom: 20px;
+    }
+}
+
+@media only screen and ( min-width: 601px ) {
+    .g1-collection-listxxs-mod21 {
+        .g1-module-small {
+            .g1-collection-item {
+                width: 50%;
+            }
+        }
+    }
+}

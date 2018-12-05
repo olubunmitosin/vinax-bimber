@@ -1,0 +1,28 @@
+/*
+ * RCP - Base Styles.
+ */
+
+@import "message";
+
+//@if ( $is_amp != true ) {
+	@import "form.registration";
+	@import "form.login";
+
+
+	//p + .rcp_restricted,
+	p + .g1-rcp-message {
+		&:before{
+			display: block;
+			width: 100%;
+			height: 7.5rem;
+			margin-top: -7.5rem;
+
+			position: relative;
+			top: -1.5rem;
+
+			content: "";
+
+			background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, #fff 100%);
+		}
+	}
+//}

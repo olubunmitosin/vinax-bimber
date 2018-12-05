@@ -1,0 +1,171 @@
+.entry-tpl-zigzag {
+    position: relative;
+
+    .entry-featured-media {
+        .g1-fluid-wrapper {
+            margin-bottom: 0;
+        }
+    }
+
+    .entry-flags {
+        margin: 0 0 10px;
+        position: absolute;
+        z-index: 12;
+
+        @if ( 'bunchy' == $stack ) {
+            clear: $left;
+            float: $left;
+            max-width: 364px;
+            width: 50%;
+            padding: 0 10px;
+
+            top: 10px;
+            #{$left}: auto;
+            #{$right}: 0;
+        } @else if ( 'fashion' == $stack ) {
+            padding: 0 10px;
+            top: 10px;
+            #{$left}: 0;
+            #{$right}: auto;
+        } @else if ( 'carmania' == $stack or 'fashion' == $stack or 'app' == $stack ) {
+            top: 0;
+            #{$left}: 0;
+            #{$right}: auto;
+        } @else if ( 'miami' == $stack or 'hardcore' == $stack or 'music' == $stack ) {
+            top: 0;
+            #{$left}: 0;
+            #{$right}: auto;
+        } @else{
+            padding: 0 10px;
+
+            top: -10px;
+            #{$left}: 0;
+            #{$right}: auto;
+        }
+    }
+
+    .entry-flags:first-child {
+        position: relative;
+    }
+
+
+    .entry-stats,
+    .entry-categories {
+        margin-bottom: 0.75rem;
+    }
+
+    .entry-footer {
+        @include display(flex);
+        @include flex-wrap(wrap);
+        @include align-items(center);
+        @include justify-content(space-between);
+
+        .mashsb-mini {
+            margin-bottom: 1.5rem;
+        }
+    }
+}
+
+@media only screen and ( min-width: 767px ) {
+    .entry-tpl-zigzag {
+        @include display(flex);
+        @include align-items(center);
+        margin-bottom: $grid_gutter_width;
+
+        .entry-featured-media {
+            @include box-sizing(border-box);
+            @include align-self(flex-start);
+            width: 50%;
+            padding-#{$right}: $grid_gutter_width/2;
+            margin-bottom: 0;
+        }
+
+        .entry-flags {
+            @if ( 'top' == $badge_position ) {
+                margin-top: 0;
+
+                position: absolute;
+                #{$left}: 0;
+                #{$right}: auto;
+            } @else {
+                margin-top: 0;
+
+                position: absolute;
+                #{$left}: 0;
+                #{$right}: auto;
+
+                @include translateY(0);
+            }
+        }
+
+        .entry-body {
+            @include box-sizing(border-box);
+            width: 50%;
+            padding-#{$left}: $grid_gutter_width*3/2;
+        }
+    }
+
+    // Reverse order
+    .g1-collection-item-entry-even {
+        .entry-tpl-zigzag {
+            @include flex-direction(row-reverse);
+
+            .entry-featured-media {
+                padding-#{$left}: $grid_gutter_width/2;
+                padding-#{$right}: 0;
+            }
+
+            .entry-flags {
+                @if ( 'top' == $badge_position ) {
+                    #{$left}: auto;
+                    #{$right}: 0;
+                } @else {
+                    #{$left}: auto;
+                    #{$right}: 0;
+                }
+            }
+
+
+            .entry-body {
+                padding-#{$right}: $grid_gutter_width*3/2;
+                padding-#{$left}: 0;
+            }
+        }
+    }
+}
+
+
+
+.g1-collection-zigzag {
+    .g1-collection-viewport {
+        margin-#{$left}: 0;
+        margin-#{$right}: 0;
+    }
+
+    .g1-collection-item {
+        padding-#{$left}: 0;
+        padding-#{$right}: 0;
+    }
+
+    .g1-collection-item + .g1-collection-item {
+        padding-top: $grid_gutter_width;
+        border-width: 1px 0 0;
+
+        border-style: solid;
+
+        border-color: $skin_border_color;
+    }
+
+    .g1-advertisement-inside-zigzag {
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+
+    .g1-newsletter-horizontal {
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+}
+
+
+

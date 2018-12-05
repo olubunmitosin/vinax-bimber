@@ -1,0 +1,17 @@
+.entry-tpl-listxs {
+    width: 344px;
+
+    .entry-featured-media {
+        float: #{$left};
+        margin: side-values( 0 20px 0 0 );
+        max-width: 110px;
+    }
+
+    .entry-header {
+        padding: 20px 0 10px;
+
+        .entry-title {
+            clear: none;
+        }
+    }
+}

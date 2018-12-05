@@ -1,0 +1,23 @@
+/**
+ * Dividers
+ *
+ * We use it as a separator between auto-loaded posts
+ */
+.g1-divider {
+    margin: 3em 0;
+
+    &:before,
+    &:after {
+        display: block;
+
+        height: 4px;
+        border-width: 4px 0;
+        margin-bottom: 4px;
+
+        border-style: dotted;
+
+        content: "";
+
+        opacity: 0.3;
+    }
+}

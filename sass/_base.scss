@@ -1,0 +1,702 @@
+/**
+ * The whole CSS/SASS structure is based on the Inverted Triangle CSS methodology.
+ *
+ * All CSS rules are grouped by type as follows:
+ * Display & Box Model
+ *      display
+ *      box-sizing
+ *      clear
+ *      float
+ *      overflow
+ *      width
+ *      height
+ *      padding
+ *      margin
+ *      border-width
+ *
+ * Positioning
+ *      position
+ *      z-index
+ *      left
+ *      right
+ *      top
+ *      bottom
+ *
+ * Text
+ *      font-size
+ *      line-height
+ *      font-family
+ *      font-weight
+ *      text-align
+ *      vertical-align
+ *      text-shadow
+ *
+ * Stylistic
+ *      border-style
+ *      border-radius
+ *      box-shadow
+ *      cursor
+ *
+ * Other
+ *      content
+ *
+ * Colors, backgrounds
+ *      border-color
+ *      background-color
+ *      color
+ *      opacity
+ *
+ *
+ * TABLE OF CONTENTS
+ *
+ *  1. Settings
+ *      1.1 Global
+ *
+ *  2. Tools
+ *      2.1 Functions
+ *      2.2 Mixins
+ *
+ *  3. Generic
+ *       3.1 Reset
+ *
+ *  4. Elements
+ *      4.1 Default
+ *      4.2 Forms
+ *
+ *  5. Objects
+ *      5.1 Grid
+ *      5.2 Fluid wrapper
+ *
+ *  6. Components
+ */
+
+
+
+
+
+
+
+
+@import "compass/css3";
+@import "tools.functions";
+@import "tools.mixins";
+
+
+
+/* 1.1 Reset
+----------------------------------------------------------------------------- */
+@import "generic.reset";
+
+
+
+/* 1.2 Default
+----------------------------------------------------------------------------- */
+@import "elements.default";
+@import "elements.forms";
+@import "elements.forms.bunchy";
+
+
+
+
+/*  Grid System
+----------------------------------------------------------------------------- */
+@import "objects.grid";
+@import "objects.fluid_wrapper";
+
+#g1-breakpoint-desktop {
+    min-width: 1024px;
+}
+
+
+
+
+
+/* ----------------------------------------------------------------------------
+
+3 . ELEMENTS
+
+----------------------------------------------------------------------------- */
+
+@import "components.typography";
+
+@import "components.buttons";
+@import "components.arrows";
+@import "components.arrows.bunchy";
+
+@import "components.forms";
+@import "components.forms.search";
+@import "components.forms.password";
+@import "components.forms.contact";
+
+
+
+
+@import "components.quotes";
+@import "components.quotes.bunchy";
+
+
+@import "components.messages";
+
+@import "components.avatars";
+
+
+@import "components.audio";
+@import "components.video";
+@import "components.gallery";
+
+
+
+
+@import "components.breadcrumbs";
+@import "components.pagination";
+
+@import "components.tables";
+@import "components.mailchimp";
+
+@import "components.back_to_top";
+
+
+
+/* ----------------------------------------------------------------------------
+
+4 . MODULES
+
+----------------------------------------------------------------------------- */
+
+
+@import "components.entry.base";
+@import "components.entry/templates/grid";
+@import "components.entry/templates/grid.fancy";
+@import "components.entry/templates/grid.xs";
+@import "components.entry/templates/list";
+@import "components.entry/templates/listnumb";
+@import "components.entry/templates/txtlist";
+@import "components.entry/templates/upvote";
+@import "components.entry/templates/list.fancy";
+@import "components.entry/templates/list.xs";
+@import "components.entry/templates/list.xxs";
+@import "components.entry/templates/list.xl";
+@import "components.entry/templates/tile";
+@import "components.entry/templates/classic";
+@import "components.entry/templates/classic-v2";
+@import "components.entry/templates/classic-v3";
+@import "components.entry/templates/index";
+@import "components.entry/templates/stream";
+@import "components.entry/templates/zigzag";
+@import "components.entry/templates/bunchy";
+@import "components.entry/templates/list.s";
+
+@import "components.entry.collections";
+@import "components.collections/narrow";
+@import "components.collections/masonry";
+
+@import "components.featured";
+@import "components.mosaics";
+
+// Flickity
+@import "components.flickity/flickity";
+
+
+@import "components.widgets";
+
+@import "components.comments";
+@import "components.comments.bunchy";
+
+@import "components.author_info";
+
+@import "components.single_nav";
+@import "components.teasers";
+
+@import "components.pages";
+@import "components.archive";
+
+@import "components.images";
+@import "components.images.gifs";
+@import "components.boxes";
+
+@import "components.mashshare";
+
+@import "components.menu.base";
+@import "components.menu.canvas";
+@import "components.menu.primary";
+@import "components.menu.secondary";
+@import "components.menu.quick";
+@import "components.menu.quick.bunchy";
+@import "components.menu.footer";
+
+@import "components.drops";
+@import "components.adace/ads";
+@import "components.adace/adi";
+@import "components.adace/shoppable_images";
+
+
+@import "components.icons";
+
+@import "components.sharebar";
+
+@import "components.404";
+
+// Sections
+@import "components.sections/base";
+
+
+@media only screen and ( min-width: 1025px ) {
+    #page {
+        @include display(flex);
+        @include flex-wrap(wrap);
+        @include flex-direction(column);
+
+        min-height: 100vh;
+
+        body.admin-bar & {
+            min-height: calc( 100vh - 32px );
+        }
+
+        > #primary.g1-primary-max {
+            @include flex(1 1 auto);
+        }
+    }
+}
+
+/* 5.3 Header - Theme Area
+----------------------------------------------------------------------------- */
+@import "components.ta_02_header";
+
+
+/* 5.5 Content - Theme Area
+----------------------------------------------------------------------------- */
+@import "components.ta_04_content";
+
+
+/* 5.7 Footer - Theme Area
+----------------------------------------------------------------------------- */
+@import "components.ta_06_footer";
+
+@import "components.embeds";
+@import "components.magnific_popup";
+
+
+
+
+@import "components.link_exit";
+
+
+
+
+
+
+
+
+@import "components.links";
+
+
+@import "trumps.utilities";
+@import "trumps.print";
+
+
+
+@import "components.nsfw";
+@import "components.nsfw.templates";
+
+
+
+
+
+
+@if 'cards' == $stack {
+    .g1-related-entries-row,
+    .g1-dont-miss-row {
+        background: #ededed;
+        margin-#{$left}: calc((100% - 100vw)/2);
+        margin-#{$right}: calc((100% - 100vw)/2);
+        padding-#{$left}: calc((100vw - 100%)/2);
+        padding-#{$right}: calc((100vw - 100%)/2);
+    }
+}
+
+
+
+
+@import "components.tabs";
+
+@import "components.reactions";
+@import "components.facebook";
+@import "components.wpml";
+@import "components.g1-socials";
+@import "components.my-cred";
+@import "components.rcp/base";
+@import "components.adace/coupons";
+@import "components.adace/links_row";
+//Popup
+@import "components.popup/base";
+//Slideup
+@import "components.slideup/base";
+
+
+
+
+
+
+
+
+.g1-title-align-center {
+    text-align: center;
+}
+
+
+.g1-dark {
+    .g1-current-background {
+        background-color: $skin_dark_background_color;
+    }
+}
+
+
+
+
+
+// Spin animation.
+@-webkit-keyframes g1-anim-spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+@keyframes g1-anim-spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+
+
+
+@import "components.dividers";
+
+
+
+
+
+
+.g1-sticky-widget {
+    position: -webkit-sticky;
+    position: sticky;
+}
+
+
+
+
+@import "components.socialace/all";
+
+
+
+
+
+
+.g1-promoted-products-link {
+    text-align: $right;
+}
+
+$_centered: 'original-2018' == $stack or 'fashion' == $stack or 'music' == $stack;
+
+.adace-disclosure {
+    @if ( 'original-2018' == $stack ) {
+        margin-top: -5px;
+    } @else if ( 'fashion' == $stack ) {
+        margin-top: -20px;
+    } @else {
+        margin-top: -1rem;
+    }
+
+    @if ( $_centered ) {
+        text-align: center;
+    }
+}
+
+
+
+
+
+
+// Download Monitor plugin integration
+@import "components.dlm";
+
+
+
+
+
+
+
+
+
+$_centered: 'music' == $stack or 'fashion' == $stack;
+
+.entry-voting {
+    padding-top: 6px;
+    border-width: 1px 0 0;
+    margin: 10px 0;
+
+    border-style: solid;
+
+    border-color: $skin_border_color;
+
+    .snax-voting-mini {
+        .snax-voting-upvote:not(:hover):not(.snax-user-voted),
+        .snax-voting-downvote:not(:hover):not(.snax-user-voted) {
+            opacity: 1;
+            color: $skin_important_text_color;
+        }
+
+        .snax-voting-score {
+            strong {
+                display: inline;
+
+                font-size: inherit;
+                font-weight: inherit;
+
+                vertical-align: baseline;
+            }
+        }
+
+
+        .snax-voting-upvote {
+            width: 48px;
+            margin-#{$right}: 0;
+
+            @if ($_centered ) {
+                border-radius: $button_border_radius;
+            } @else {
+                border-top-#{$left}-radius: $button_border_radius;
+                border-bottom-#{$left}-radius: $button_border_radius;
+            }
+
+            background-color: $skin_background_tone_color;
+            color: $skin_important_text_color;
+
+            &:before {
+                font-size: 16px;
+                line-height: 24px;
+                font-family: snaxicon;
+
+                content: "\e043";
+            }
+
+            &:hover,
+            &.snax-user-voted {
+                background-color: #d0f7ca;
+                color: #00b000;
+            }
+
+        }
+
+        .snax-voting-downvote {
+            width: 48px;
+            margin-#{$left}: 1px;
+
+            @if ($_centered ) {
+                @include order(8);
+            }
+            @if ($_centered ) {
+                border-radius: $button_border_radius;
+            } @else {
+                border-top-#{$right}-radius: $button_border_radius;
+                border-bottom-#{$right}-radius: $button_border_radius;
+            }
+
+            background-color: $skin_background_tone_color;
+            color: $skin_important_text_color;
+
+            &:before {
+                font-size: 16px;
+                line-height: 24px;
+                font-family: snaxicon;
+
+                content: "\e044";
+            }
+
+            &:hover,
+            &.snax-user-voted {
+                background-color: #ffcfda;
+                color: #dc0024;
+            }
+        }
+    }
+}
+
+
+// Mace gallery teaser
+.mace-gallery-teaser-button-text,
+.mace-gallery-teaser-button-counter {
+    color: inherit;
+}
+
+
+
+.wpgdprc-checkbox,
+.mc4wp-checkbox-wp-comment-form,
+.comment-form-cookies-consent {
+    [type=checkbox] {
+        margin-#{$right}: 10px;
+    }
+
+    label {
+        display: inline;
+
+        font-weight: normal;
+        letter-spacing: normal;
+        text-transform: none;
+    }
+}
+
+
+
+
+
+
+.adace-linklist-with-images-csstodo {
+    margin-#{$left}: -5px;
+    margin-#{$right}: -5px;
+
+    ul {
+        @include display(flex);
+        @include flex-wrap(wrap);
+        @include align-items(stretch);
+
+        margin-#{$left}: 0;
+        margin-#{$right}: 0;
+
+        list-style: none;
+
+        &:after {
+            display: table;
+            clear: both;
+            content: "";
+        }
+    }
+
+    .item {
+        @include display(flex);
+        @include box-sizing( border-box );
+
+        width: 50%;
+        padding: 0 5px;
+        margin-bottom: 10px;
+    }
+
+    .item-highlighted {
+        width: 100%;
+    }
+
+    a {
+        @include box-sizing(border-box);
+        display: block;
+        width: 100%;
+        padding: 20px;
+        border-width: 1px;
+
+        text-align: center;
+
+        border-style: solid;
+        border-color: $skin_border_color;
+
+        img {
+            display: block;
+            max-height: 36px;
+            width: auto;
+            margin: 0 auto;
+        }
+    }
+
+    ul.transparent {
+        a { opacity: 0.666; }
+        a:hover { opacity: 0.999;}
+    }
+}
+
+.g1-section-row .adace-linklist-with-images-csstodo {
+    .item {
+        padding: 0;
+    }
+
+    a {
+        @include transition(opacity 0.375s ease-in-out);
+    }
+
+    ul:hover {
+        a { opacity: 0.166; }
+        a:hover { opacity: 0.999; }
+    }
+}
+
+
+.adace-shop-the-post-wrap {
+    .woocommerce {
+        ul.products {
+            @include box-sizing(border-box);
+            max-width: 520px;
+            padding-#{$left}: 40px;
+            padding-#{$right}: 40px;
+            margin-#{$right}: auto;
+            margin-#{$left}: auto;
+
+            li.product {
+                padding-#{$left}: 5px;
+                padding-#{$right}: 5px;
+            }
+        }
+
+    }
+}
+
+
+.g1-promoted-product {
+    .g1-row-inner {
+        @include align-items(center);
+    }
+
+    .product-link {
+        text-align: $right;
+    }
+}
+
+
+@import "components.stripes";
+
+
+.g1-hb-row {
+    .g1-socials-items-tpl-grid {
+        .g1-socials-item {
+            display: inline-block;
+            vertical-align: top;
+        }
+    }
+}
+
+
+
+
+
+
+@import "components.collections/templates/listxxs-mod01";
+@import "components.collections/templates/listxxs-mod02";
+@import "components.collections/templates/listxxs-mod03";
+@import "components.collections/templates/listxxs-mod11";
+@import "components.collections/templates/listxxs-mod12";
+@import "components.collections/templates/listxxs-mod13";
+@import "components.collections/templates/listxxs-mod21";
+@import "components.collections/templates/listxxs-mod31";
+@import "components.collections/templates/listxxs-mod32";
+
+@import "components.collections/templates/txtlist-mod01";
+@import "components.collections/templates/txtlist-mod02";
+@import "components.collections/templates/txtlist-mod03";
+@import "components.collections/templates/txtlist-mod11";
+
+@import "components.collections/templates/10-2of3";

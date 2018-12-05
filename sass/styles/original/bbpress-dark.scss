@@ -1,0 +1,7 @@
+// Set LTR (Left to Right) direction
+$dir: ltr;
+$stack: 'original';
+$is_amp: false;
+@import "../../lib.directional";
+
+@import "../../base_bbpress";

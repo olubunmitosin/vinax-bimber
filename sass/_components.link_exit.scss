@@ -1,0 +1,22 @@
+.page-link-exit{
+    #g1-link-landing-page-content{
+        text-align: center;
+    }
+}
+
+#g1-link-countdown{
+    display: block;
+    margin: 1.5rem 0;
+}
+
+#g1-link-seconds-left{
+    display: inline-block;
+    min-width: 2em;
+    margin: 0 5px;
+
+    position: relative;
+    top: 0.25em;
+
+    font-size: 2em;
+    text-align: center;
+}

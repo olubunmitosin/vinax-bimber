@@ -1,0 +1,13 @@
+.g1-collection-listxxs-mod31 {
+    .entry-tpl-tile {
+        margin-bottom: 20px;
+    }
+}
+
+@media only screen and ( min-width: 601px ) {
+    .g1-collection-listxxs-mod31 {
+        .g1-collection-item + .g1-collection-item {
+            width: 50%;
+        }
+    }
+}

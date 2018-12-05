@@ -1,0 +1,69 @@
+/*
+ * RCP - Base Styles.
+ */
+
+.g1-rcp-message {
+	display: block;
+	margin-bottom: 2rem;
+
+	position: relative;
+
+	text-align: center;
+}
+
+.g1-rcp-actions {
+	@include display(flex);
+	@include flex-wrap(wrap);
+	padding: side-values( 10px 15px 20px );
+
+	position: relative;
+
+	background-color: $skin_background_tone_color;
+	border-top: 1px solid $skin_border_color;
+
+}
+.g1-rcp-action {
+	@include box-sizing( border-box );
+	width: 100%;
+	padding: side-values( 30px 15px 0 );
+
+	.g1-gamma {
+		margin-bottom: 1rem;
+	}
+}
+
+.g1-rcp-action-icon {
+	display: block;
+	margin-bottom: 1rem;
+
+	font: 32px/1 bimber;
+
+	color: $skin_important_text_color;
+}
+
+.g1-rcp-action-buttons {
+	margin-bottom: 0;
+}
+
+.g1-rcp-action-register {
+	.g1-rcp-action-icon {
+		&:before {
+			content: "\e037";
+		}
+	}
+}
+
+.g1-rcp-action-login {
+	.g1-rcp-action-icon {
+		&:before {
+			content: "\e013";
+		}
+	}
+}
+
+@media only screen and ( min-width: $mobile_breakpoint + 1px ) {
+	.g1-rcp-action {
+		@include flex(1 0 auto);
+		width: 50%;
+	}
+}

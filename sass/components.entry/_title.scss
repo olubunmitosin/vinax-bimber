@@ -1,0 +1,20 @@
+.entry-before-title {
+    font-size: 0;
+
+    .entry-stats,
+    .entry-categories {
+        vertical-align: middle;
+    }
+}
+
+.entry-title {
+    > a {
+        color: inherit;
+    }
+}
+
+.entry-subtitle {
+    .entry-title + & {
+        margin-top: -0.75em;
+    }
+}

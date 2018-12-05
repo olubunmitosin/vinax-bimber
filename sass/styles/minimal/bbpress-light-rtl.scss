@@ -1,0 +1,8 @@
+// Set RTL (Right to Left) direction
+$dir: rtl;
+$skin: 'dark';
+$is_amp: false;
+$stack: 'minimal';
+@import "../../lib.directional";
+
+@import "../../base_bbpress";

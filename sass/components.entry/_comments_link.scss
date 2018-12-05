@@ -1,0 +1,40 @@
+.entry-comments-link {
+    display: inline-block;
+    margin-#{$right}: 10px;
+
+    vertical-align: top;
+    pointer-events: auto;
+
+    a {
+        display: inline-block;
+        position: relative;
+
+        &:before {
+            display: inline-block;
+            margin-#{$right}: 4px;
+
+            font: 16px/16px "bimber";
+
+            vertical-align: top;
+
+            content: "\e010";
+        }
+
+        strong,
+        span {
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        span {
+            margin-#{$left}: 4px;
+
+            // Hide it
+            clip: rect(1px, 1px, 1px, 1px);
+            position: absolute;
+            height: 1px;
+            width: 1px;
+            overflow: hidden;
+        }
+    }
+}

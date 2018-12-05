@@ -1,0 +1,50 @@
+.entry-tpl-listxxs {
+    margin: 0 0 20px;
+
+    &:after {
+        display: table;
+        clear: both;
+
+        content: "";
+    }
+
+    .entry-featured-media {
+        float: #{$left};
+        margin: side-values( 0 15px 0 0 );
+        width: 90px;
+    }
+
+    .entry-header {
+        overflow: hidden;
+
+        .entry-title {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.entry-tpl-listxxs-numbered{
+    margin-bottom: 1.5rem;
+
+    position: relative;
+
+    counter-increment: g1-collection-item-counter;
+
+    .entry-counter{
+        @include display(flex);
+        @include align-items(center);
+
+        #{$left}: 0;
+        #{$right}: auto;
+        top: 0;
+        bottom: 0;
+
+    }
+    .entry-header{
+        padding-#{$left}: 60px;
+    }
+}
+
+.g1-collection-listxxsmall-numbered{
+    padding-top: 10px;
+}

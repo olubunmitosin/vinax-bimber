@@ -1,0 +1,57 @@
+.g1-collection-txtlist-mod02 {
+    .entry-tpl-tile {
+        margin-bottom: 15px;
+    }
+
+    .g1-collection-item {
+        padding-#{$left}: 0;
+        padding-#{$right}: 0;
+    }
+}
+
+@media only screen and ( min-width: 601px ) {
+    .g1-collection-txtlist-mod02 {
+        .g1-collection-viewport {
+            @include display(flex);
+            @include align-items(stretch);
+        }
+
+        .g1-module-big {
+            width: 50%;
+
+            position: relative;
+
+            .entry-tpl-tile {
+                position: absolute;
+                #{$left}: 0;
+                #{$right}: 0;
+                top: 0;
+                bottom: 0;
+
+                > .entry-featured-media {
+                    position: absolute;
+                    #{$left}: 0;
+                    #{$right}: 0;
+                    top: 0;
+                    bottom: 0;
+
+                    > .g1-frame {
+                        position: absolute;
+                        #{$left}: 0;
+                        #{$right}: 0;
+                        top: 0;
+                        bottom: 0;
+                    }
+
+                    img {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .g1-module-small {
+            width: 50%;
+        }
+    }
+}

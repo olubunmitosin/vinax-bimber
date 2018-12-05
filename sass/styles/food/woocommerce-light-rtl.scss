@@ -1,0 +1,10 @@
+// Set RTL (Right to Left) direction
+$dir: rtl;
+$is_amp: false;
+$stack: 'food';
+@import "../../lib.directional";
+
+@import "../../settings";
+@import "settings";
+
+@import "../../base_woocommerce";

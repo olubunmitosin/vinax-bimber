@@ -1,0 +1,33 @@
+/**
+ * Text List Template
+ */
+
+.entry-tpl-txtlist {
+    padding-#{$left}: 20px;
+
+    .entry-title {
+        margin-bottom: 10px;
+
+        position: relative;
+
+        // Arrow
+        &:before {
+            position: absolute;
+            #{$left}: -20px;
+            #{$right}: auto;
+
+            font-size: 16px;
+            font-family: "bimber";
+            font-weight: normal;
+            font-style: normal;
+
+            content: if-ltr( "\e009", "\e008");
+        }
+    }
+
+}
+
+.g1-collection-item-txtlist + .g1-collection-item-txtlist {
+    padding-top: 10px;
+    border-top: 1px solid $skin_border_color;
+}

@@ -1,0 +1,88 @@
+$_centered: 'music' == $stack or 'fashion' == $stack;
+
+
+.entry-header-01 {
+    @if ( $_centered ) {
+        text-align: center;
+    }
+
+    .entry-before-title {
+        @include display(flex);
+        @include flex-wrap(wrap);
+        @include align-items(flex-end);
+        @include justify-content(space-between);
+    }
+
+    .entry-categories,
+    .entry-flags {
+        display: inline-block;
+        margin-bottom: 1rem;
+
+        vertical-align: middle;
+    }
+}
+
+.entry-tpl-classic-nosidebar {
+    > .entry-header {
+        max-width: 758px; // csstodo Make it dynamic
+        margin-#{$left}: auto;
+        margin-#{$right}: auto;
+
+        @if ( $_centered ) {
+            text-align: center;
+
+            .entry-meta-m {
+                @include align-items(flex-start);
+                @include justify-content(center);
+            }
+
+            .entry-byline-with-avatar {
+                position: relative;
+                padding-top: 46px;
+
+                .avatar {
+                    margin: 0 auto;
+
+                    position: absolute;
+                    top: 0;
+                    #{$left}: 0;
+                    #{$right}: 0;
+                }
+            }
+
+            .entry-stats {
+                padding-top: 0;
+            }
+
+            .entry-author,
+            .entry-views,
+            .entry-comments-link {
+                margin-#{$left}: 10px;
+                margin-#{$right}: 10px;
+            }
+
+            .entry-views:before,
+            .entry-comments-link a:before {
+                display: block;
+                float: none;
+                width: 38px;
+                border-width: 1px;
+                margin: 0 auto 6px;
+
+                font-size: 16px;
+                line-height: 38px;
+
+                border-style: solid;
+                border-radius: 50%;
+            }
+
+            .entry-comments-link a > span {
+                position: static;
+                width: auto;
+                height: auto;
+                overflow: visible;
+            }
+        }
+    }
+}
+

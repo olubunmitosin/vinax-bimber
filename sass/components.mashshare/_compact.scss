@@ -1,0 +1,67 @@
+.mashsb-compact {
+    .mashsb-buttons {
+        a {
+            min-width: 0;
+            padding-top: 7px;
+            padding-bottom: 7px;
+
+            line-height: 18px;
+        }
+    }
+
+    .onoffswitch {
+        display: none;
+    }
+}
+
+
+// csstodo Proper file
+.mashsb-mini {
+    padding-top: 0;
+    padding-bottom: 0;
+
+    .mashsb-box {
+        .mashsb-buttons {
+            a {
+                min-width: 0;
+                margin: 0 3px;
+
+                border-style: solid;
+                @include border-radius(50%);
+
+                @if ( 'fashion' == $stack ) {
+                    padding: 10px;
+                    border-width: 2px;
+                    border-color: $skin_important_text_color;
+                    background-color: transparent;
+                    color: $skin_important_text_color;
+                } @else {
+                    padding: 12px;
+                    border-width: 2px;
+                    border-color: $skin_important_text_color;
+                    background-color: transparent;
+                    color: $skin_important_text_color;
+                }
+            }
+
+            .icon {
+                display: block;
+
+                color: inherit;
+
+                &:before {
+                    display: block;
+                    margin: 0;
+                }
+            }
+
+            .text {
+                display: none;
+            }
+
+            .onoffswitch {
+                display: none;
+            }
+        }
+    }
+}

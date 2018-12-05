@@ -1,0 +1,26 @@
+.entry-votes {
+    display: inline-block;
+    margin-#{$right}: 10px;
+    vertical-align: top;
+
+    &:before {
+        display: inline-block;
+        margin-#{$right}: 4px;
+
+        font: 16px/16px "bimber";
+
+        vertical-align: top;
+
+        content: "\e02b";
+    }
+
+    strong,
+    span {
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    span {
+        margin-#{$left}: 4px;
+    }
+}

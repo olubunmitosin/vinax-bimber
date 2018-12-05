@@ -1,0 +1,25 @@
+.g1-secondary-nav {
+    margin-bottom: 1.5rem;
+    z-index: 0;
+}
+
+.g1-secondary-nav-menu {
+    margin: 0;
+    list-style: none;
+
+    > .menu-item {
+        display: block;
+        font-size: 1rem;
+        text-align: $left;
+
+        > a {
+            display: block;
+            padding: 8px 0;
+
+            font-size: $meta_font_size;
+            line-height: $meta_line_height;
+            font-family: $meta_font_family;
+            font-weight: $meta_font_weight;
+        }
+    }
+}

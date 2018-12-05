@@ -1,0 +1,234 @@
+@if ( 'bottom' == $badge_position ) {
+    .entry-flags + .entry-body {
+        .entry-stats {
+            padding-#{$left}: 10px;
+        }
+    }
+}
+
+
+.entry-byline {
+    margin-bottom: 0.25rem;
+
+    &:after {
+        clear: both;
+        display: table;
+        content: "";
+    }
+
+    @if ( 'original-2018' == $stack ) {
+        @include display(flex);
+        @include flex-wrap(wrap);
+        @include align-items(center);
+
+        .entry-date {
+            &:before {
+                display: inline-block;
+                width: 3px;
+                height: 3px;
+                margin-#{$right}: 8px;
+
+                vertical-align: middle;
+
+                @include border-radius(50%);
+
+                content: "";
+
+                background: currentColor;
+            }
+        }
+    } @elseif ( 'bunchy' == $stack or 'carmania' == $stack ) {
+        @include display(flex);
+        @include flex-wrap(wrap);
+        @include align-items(center);
+    } @else {
+        .entry-date {
+            display: block;
+        }
+    }
+}
+
+
+.entry-stats {
+    display: inline-block;
+    clear: both;
+    position: relative;
+    z-index: 6;
+
+    margin-bottom: 0.25rem;
+    padding: side-values( 3px 10px 3px 0 );
+}
+
+.entry-stats-m {
+    .entry-views:before,
+    .entry-votes:before,
+    .entry-downloads:before,
+    .entry-comments-link a:before {
+        margin-#{$right}: 6px;
+
+        font-size: 32px;
+        line-height: 32px;
+
+        vertical-align: middle;
+    }
+
+    .entry-views strong,
+    .entry-views span,
+    .entry-votes strong,
+    .entry-votes span,
+    .entry-downloads strong,
+    .entry-downloads span,
+    .entry-comments-link strong,
+    .entry-comments-link span {
+        vertical-align: middle;
+    }
+
+    .entry-views-popular {
+        &:before {
+            content: "\e015";
+
+            color: #ff577b;
+        }
+
+        strong {
+            color: #ff577b;
+        }
+    }
+
+    .entry-views-hot {
+        &:before {
+            content: "\e01c";
+
+            color: #ff0036;
+        }
+
+        strong {
+            color: #ff0036;
+        }
+    }
+
+    .entry-views-trending {
+        &:before {
+            content: "\e030";
+
+            color: #bf0029;
+        }
+
+        strong {
+            color: #bf0029;
+        }
+    }
+}
+
+
+.g1-meta-m {
+    strong {
+        @if ( 'hardcore' == $stack ) {
+            font-family: "Rajdhani", "Roboto", sans-serif;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        } @else {
+            font-weight: 600;
+        }
+    }
+}
+
+
+$_centered: 'music' == $stack;
+.entry-meta-m {
+    @include display(flex);
+    @include flex-wrap(wrap);
+    @include align-items(center);
+
+    @if ( $_centered ) {
+        @include justify-content(center);
+
+        .entry-byline {
+            text-align: $left;
+        }
+    } @else {
+        @include justify-content(space-between);
+    }
+
+    margin-bottom: 0.75rem;
+
+    .entry-date {
+        white-space: nowrap;
+    }
+}
+
+
+
+@if ( 'app' == $stack ) {
+    .entry-byline-m {
+        .avatar {
+            @include box-shadow(0 6px 12px rgba(0,0,0, 0.2));
+        }
+    }
+}
+
+@if ( 'original-2018' == $stack or 'bunchy' == $stack or 'carmania' == $stack ) {
+    .entry-byline-with-avatar {
+        min-height: 30px;
+        padding-#{$left}: 30px + 10px;
+
+        position: relative;
+
+        .avatar {
+            position: absolute;
+            #{$left}: 0;
+            #{$right}: auto;
+            top: 50%;
+
+            @include translateY(-50%);
+
+            vertical-align: middle;
+        }
+    }
+
+    .entry-byline-s.entry-byline-with-avatar {
+        min-height: 24px;
+        padding-#{$left}: 24px + 10px;
+    }
+
+    .entry-byline-m.entry-byline-with-avatar {
+        min-height: 40px;
+        padding-#{$left}: 40px + 10px;
+    }
+}
+
+$_centered: 'music' == $stack;
+
+.entry-meta-csstodo {
+    @include display(flex);
+    @include flex-wrap(wrap);
+    @include align-items(center);
+
+    @if ( $_centered ) {
+        @include justify-content(center);
+    }
+
+    margin-bottom: 0.75rem;
+
+    @if ( $_centered ) {
+        .entry-byline {
+            text-align: $left;
+        }
+    }
+
+    .entry-categories-inner {
+        font-size: inherit;
+    }
+
+    .entry-categories-label {
+        margin-#{$right}: 0.25em;
+    }
+
+    .entry-stats,
+    .entry-byline,
+    .entry-categories {
+        margin: side-values( 0.25rem 30px 0.25rem 0);
+    }
+}
+

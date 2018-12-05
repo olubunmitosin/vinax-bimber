@@ -1,0 +1,15 @@
+$skin: 'light';
+
+$is_amp: false;
+@import "../../settings";
+@import "settings";
+
+$stack: 'food';
+
+// Set LTR (Left to Right) direction
+$dir: ltr;
+@import "../../lib.directional";
+
+@import "../../compass/css3";
+
+@import "../../snax/all";

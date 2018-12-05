@@ -1,0 +1,206 @@
+/**
+ * List template
+ */
+.entry-tpl-upvote {
+    margin-#{$left}: 50px;
+
+    position: relative;
+
+    @if ( 'cards' == $stack ) {
+        margin-bottom: 10px;
+
+        background: $skin_background_color;
+        box-shadow: 0 1px 1px #ededed;
+    } @else {
+        margin-bottom: 30px;
+    }
+
+    // Clearfix.
+    &:after {
+        display: table;
+        clear: both;
+        content: "";
+    }
+
+    .entry-featured-media {
+        margin: 0;
+    }
+
+    .entry-flags {
+        margin: 0 0 10px;
+        position: absolute;
+        z-index: 12;
+
+        @if ( 'bunchy' == $stack ) {
+            clear: $left;
+            float: $left;
+            max-width: 364px;
+            width: 50%;
+            padding: 0 10px;
+
+            top: 10px;
+            #{$left}: auto;
+            #{$right}: 0;
+        } @else if ( 'fashion' == $stack ) {
+            padding: 0 10px;
+            top: 10px;
+            #{$left}: 0;
+            #{$right}: auto;
+        } @else if ( 'carmania' == $stack or 'fashion' == $stack or 'app' == $stack ) {
+            top: 0;
+            #{$left}: 0;
+            #{$right}: auto;
+        } @else if ( 'miami' == $stack or 'hardcore' == $stack or 'music' == $stack ) {
+            top: 0;
+            #{$left}: 0;
+            #{$right}: auto;
+        } @else{
+            padding: 0 10px;
+
+            top: -10px;
+            #{$left}: 0;
+            #{$right}: auto;
+        }
+    }
+
+    .entry-flags:first-child {
+        position: relative;
+    }
+
+    .entry-flag {
+        width: 30px;
+        height: 30px;
+
+        line-height: 30px;
+
+        &:before {
+            font-size: 16px;
+        }
+    }
+
+    .entry-body {
+        @if ( 'cards' == $stack ) {
+            padding: 0 10px 1px;
+            background-color: $skin_background_color;
+        }
+    }
+
+    .entry-body {
+        padding-#{$left}: 20px;
+        border-width: 0 0 0 1px;
+
+        border-style: solid;
+
+        border-color: $skin_border_color;
+    }
+
+    .entry-featured-media ~ .entry-body {
+        padding-#{$left}: 0;
+        border-width: 0;
+    }
+
+    .entry-stats,
+    .entry-categories {
+        margin-bottom: 0.375rem;
+    }
+
+    .entry-title {
+        margin-bottom: 0.375rem;
+    }
+
+    .g1-button {
+        float: $right;
+        margin-bottom: 15px;
+    }
+
+    .entry-voting {
+        width: 50px;
+        margin-top: 0;
+        padding-top: 0;
+        border-width: 0;
+
+        position: absolute;
+        #{$left}: -50px;
+        #{$right}: auto;
+        top: 0;
+
+        .snax-voting-mini {
+            width: 100%;
+            @include flex-direction(column);
+            @include align-items(center);
+
+            .snax-voting-upvote,
+            .snax-voting-downvote {
+                width: 24px;
+                height: 24px;
+
+                border-radius: 50%;
+            }
+
+            .snax-voting-score {
+                margin: 6px 0;
+                height: 16px;
+                overflow: hidden;
+                @include order(3);
+
+                line-height: 16px;
+
+                strong {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+// Switch to list on bigger screens.
+@media only screen and ( min-width: 601px ) {
+    .entry-tpl-upvote {
+        position: relative;
+
+        .entry-featured-media {
+            float: #{$left};
+            width: 50%;
+            max-width: 120px;
+            margin: if-stack('cards', 0, side-values( 0 20px 0 0 ) );
+        }
+
+        @if ( 'top' == $badge_position ) {
+            .entry-flags {
+                margin-top: 0;
+
+                position: absolute;
+                #{$left}: 0;
+                #{$right}: auto;
+            }
+        } @else {
+            .entry-flags {
+                margin-top: 0;
+
+                position: absolute;
+                #{$left}: 0;
+                #{$right}: auto;
+
+                @include translateY(0);
+            }
+        }
+
+        .entry-body {
+            @if ( 'cards' == $stack ) {
+                padding-top: 15px;
+                padding-bottom: 10px;
+            }
+
+            overflow: hidden;
+        }
+    }
+}
+
+
+@media only screen and ( min-width: $mobile_breakpoint + 1px ) {
+    @if ( 'cards' == $stack ) {
+        .entry-tpl-upvote {
+            margin-bottom: 20px;
+        }
+    }
+}

@@ -1,0 +1,35 @@
+#buddypress{
+    .wp-social-login-connect-with{
+        display:none;
+    }
+    .submit{
+        width:50%;
+        margin-left:auto;
+        margin-right:0px;
+    }
+    #signup_submit{
+        width:100%;
+        display:block;
+    }
+}
+
+
+.bp-register-full .bp-register-wpsl{
+    width:30%;
+    float:left;
+}
+
+.bp-register-full .bp-register-wpsl + h3,
+.bp-register-full #register-page{
+    width:66%;
+    float:right;
+}
+
+.bp-register-full #register-page:first-child{
+    width:100%;
+    float:right;
+}
+
+.register-section{
+    color: $skin_important_text_color;
+}
